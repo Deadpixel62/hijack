@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>cards</title>
+</head>
+
+<body>
+
+    <div class="card-description">
+    
+       <p>Description</p>
+       <p>Size</p>
+       <p>Quantity</p>
+       <p>Remove</p>
+       <p>Price</p>
+    
+    </div>
+
+    <div class="card">
+
+        <div class="article">
+            <img src="./images/down_sweater_vest_black_1.jpg" alt="">
+            <p>Down Sweater Vest Black <br>
+                <span>Product Code : VSDB</span>
+            </p>
+        </div>
+
+        <p class="btnBox">S</p>
+
+        <div class="plus">
+            <p class="addItem btnBox">+</p>
+            <p class="btnBox itemQuantity">1</p>
+            <p class="minusItem btnBox">-</p>
+        </div>
+
+        <p id="removeItem" class="removeItem btnBox">x</p>
+
+        <div class="priceDollars">
+            <p class="price">50</p>
+            <p>$</p>
+        </div>
+
+
+    </div>
+
+    <div class="card">
+
+        <div class="article">
+            <img src="./images/outsider_pant_dark_rost_men.jpg" alt="">
+            <p>Outsider pants dark <br>
+                <span>Product Code : ODRK</span>
+            </p>
+        </div>
+
+        <p class="btnBox">S</p>
+
+        <div class="plus">
+            <p class="addItem btnBox">+</p>
+            <p class="btnBox itemQuantity">1</p>
+            <p class="minusItem btnBox">-</p>
+        </div>
+
+        <p id="removeItem" class="removeItem btnBox">x</p>
+
+        <div class="priceDollars">
+            <p class="price">65</p>
+            <p>$</p>
+        </div>
+
+
+    </div>
+
+    <div class="card">
+
+        <div class="article">
+            <img src="./images/quantum_ls_zip_hood_gritstone_htr.jpg" alt="">
+            <p>Quantum Zip Hoodie Gritstone <br>
+                <span>Product Code : HTRS</span>
+            </p>
+        </div>
+
+        <p class="btnBox">S</p>
+
+        <div class="plus">
+            <p class="addItem btnBox">+</p>
+            <p class="btnBox itemQuantity">1</p>
+            <p class="minusItem btnBox">-</p>
+        </div>
+
+        <p id="removeItem" class="removeItem btnBox">x</p>
+
+        <div class="priceDollars">
+            <p class="price">73</p>
+            <p>$</p>
+        </div>
+
+
+    </div>
+
+    <div class="card">
+
+        <div class="article">
+            <img src="./images/16261-phase-ar-zip-neck-ls-m-schwarz-f17.jpg" alt="">
+            <p>Phase AR Zip Vest <br>
+                <span>Product Code : MLSB</span>
+            </p>
+        </div>
+
+        <p class="btnBox">S</p>
+
+        <div class="plus">
+            <p class="addItem btnBox">+</p>
+            <p class="btnBox itemQuantity">1</p>
+            <p class="minusItem btnBox">-</p>
+        </div>
+
+        <p id="removeItem" class="removeItem btnBox">x</p>
+
+        <div class="priceDollars">
+            <p class="price">42</p>
+            <p>$</p>
+        </div>
+
+    </div>
+
+    
+
+    <!------------------------------------------------------>
+
+    <div class="pricing">
+        <div>
+            <p>Discount</p>
+            <p>0.00$</p>
+        </div>
+    
+        <div>
+            <p>Delivery</p>
+            <p>0.00$</p>
+    
+        </div>
+    
+        <div>
+            <p>Subtotal</p>
+            <p id="subtotal"></p>
+        </div>
+    
+        <div>
+            <p>Total</p>
+            <p id="totalPrice"></p>
+        </div>
+    
+    </div>
+    <p class="pcode">If you have a promo code enter it here :</p>
+    
+    <div class="done">
+    
+        <div class="promo">
+            <input type="text" placeholder="Please enter promo code">
+            <button> Apply Discount </button>
+        </div>
+    
+        <div class="checkout">
+            <button id="checkout">Checkout</button>
+            <a href="#">🛒</a>
+        </div>
+    
+    </div>
+    
+    <div class="other-options">
+        <button> Update Quantity</button>
+        <button>Continue Shopping</button>
+    </div>
+
+    
+
+    <script>
+        const plusBtn = document.getElementsByClassName("addItem");
+        const minusBtn = document.getElementsByClassName("minusItem");
+        const removeBtn = document.querySelectorAll(".removeItem");
+        const itemQuantity = document.getElementsByClassName("itemQuantity");
+        const price = document.getElementsByClassName("price");
+        const totalPrice = document.getElementById("totalPrice");
+        const subtotalPrice = document.getElementById("subtotal");
+        const checkout = document.getElementById("checkout");
+
+       
+
+        //get prices  : 
+       
+        let prices = [];
+        for (let i = 0; i < price.length; i++) {
+            prices.push(parseInt(price[i].innerHTML))
+           
+
+        }
+        
+
+        for (let i = 0; i < removeBtn.length; i++) {
+                
+                removeBtn[i].addEventListener("click", () => {
+                    removeBtn[i].parentElement.style.display = "none";
+                    price[i].innerHTML = 0 ;
+                 
+                })
+              
+            }
+
+
+
+           
+        for (let i = 0; i < plusBtn.length; i++) {
+        
+            plusBtn[i].addEventListener("click", () => {
+
+
+                itemQuantity[i].innerHTML = parseInt(itemQuantity[i].innerHTML) + 1;
+
+                price[i].innerHTML = prices[i] * parseInt(itemQuantity[i].innerHTML);
+
+                console.log(plusBtn, i);
+
+            })
+            
+        }
+
+
+
+
+        for (let i = 0; i < minusBtn.length; i++) {
+        
+            minusBtn[i].addEventListener("click", () => {
+
+                if (itemQuantity[i].innerHTML > "0") {
+                    itemQuantity[i].innerHTML = parseInt(itemQuantity[i].innerHTML) - 1;
+
+                    price[i].innerHTML = prices[i] * parseInt(itemQuantity[i].innerHTML);
+                }
+            })
+        }
+  
+          
+
+
+
+
+
+
+        function priceCount() {
+            let totalP = 0;
+            for (let i = 0; i < price.length; i++) {
+
+
+                totalP += parseInt(price[i].innerHTML);
+
+
+            }
+
+            totalPrice.innerHTML = `${totalP}$` ;
+            subtotalPrice.innerHTML = `${totalP}$`
+
+        }
+
+        setInterval(priceCount, 1);
+
+
+
+        checkout.addEventListener("click", ()=>{
+            alert(`Thank you for your purchase, your order is ${totalPrice.innerHTML}.`)
+            location.reload();
+        })
+
+
+        
+    </script>
+</body>
+
+</html>

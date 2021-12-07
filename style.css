@@ -1,0 +1,172 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 20px;
+
+  align-items: center;
+  background-image: url("./images/scattered-forcefields.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 56vw;
+  border-top: 2px solid grey;
+  padding-top: 9px;
+}
+
+.card-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 56vw;
+}
+
+img {
+  width: 100px;
+  height: 80px;
+}
+.article {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.plus {
+  display: flex;
+  align-items: center;
+}
+
+.btnBox {
+  padding: 12px;
+  border: 1px solid grey;
+}
+
+.btnBox:hover {
+  cursor: pointer;
+}
+
+.priceDollars {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+}
+
+.removeItem {
+  background-color: rgb(228, 106, 106);
+}
+
+.addItem {
+  background-color: #3c32f8;
+  color: white;
+}
+
+.minusItem {
+  background-color: rgb(206, 206, 206);
+  color: black;
+}
+
+span {
+  font-size: 13px;
+  color: rgb(49, 49, 49);
+}
+
+/*---------------------------------------------------------------------*/
+
+.pricing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10%;
+  padding: 0 8px;
+  width: 56vw;
+}
+
+.pricing div {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 0 12px;
+  border: 1px solid grey;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.212);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.done {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  gap: 16px;
+  width: 56vw;
+}
+
+.promo {
+  flex: 5.8;
+  display: flex;
+  align-items: center;
+}
+.promo input {
+  flex: 3;
+  height: 26px;
+  border-radius: none;
+}
+
+.promo button {
+  flex: 1;
+}
+
+.checkout {
+  flex: 2;
+  display: flex;
+}
+
+.checkout button {
+  flex: 3;
+}
+
+.checkout a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c32f8;
+  border-left: 1px solid white;
+  text-decoration: none;
+}
+
+button {
+  background-color: #3c32f8;
+  color: white;
+  border: none;
+  height: 32px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.pcode {
+  width: 56vw;
+}
+
+.other-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 16px;
+  width: 56vw;
+}
+
+.other-options button {
+  width: 25%;
+  margin-left: auto;
+  background-color: rgb(206, 206, 206);
+  color: black;
+}
